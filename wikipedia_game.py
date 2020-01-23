@@ -24,6 +24,7 @@ def playGame(Q, history, targetPageTitle):
         if not Q[0]:
             print('unable to link the pages')
             targetAcquired = True
+            break
 
         current = Q[0]
         Q = Q[1:]
@@ -41,7 +42,7 @@ def playGame(Q, history, targetPageTitle):
 
                 if link is not None: 
                     if(link.startswith('/wiki/')):
-                        title = link.strip('/wiki/').split(':')[0]
+                        title = link.strip('/wiki/').split(':')[0]                  #remove sections in title
                         if(title not in history):
                             history[title] = {
                                 'title': title,
