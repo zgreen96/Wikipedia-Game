@@ -25,9 +25,10 @@ def playGame(Q, history, targetPageTitle):
             print('unable to link the pages')
             targetAcquired = True
             break
-
+        
+        #inefficient use an actual Q here
         current = Q[0]
-        Q = Q[1:]
+        Q.pop(0)
         #print("\t" + current['title'])
 
         #try to follow link path
